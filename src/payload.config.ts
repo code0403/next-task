@@ -13,7 +13,7 @@ import { Seminars } from './collections/Seminars'
 import { Webinars } from './collections/Webinars'
 import { PodcastEpisodes } from './collections/PodcastEpisodes'
 
-import { eventsEndpoint } from './endpoints/events'
+// import { eventsEndpoint } from './endpoints/events'
 import { syncPodcastEndpoint } from './endpoints/syncPodcast'
 
 const filename = fileURLToPath(import.meta.url)
@@ -37,7 +37,7 @@ export default buildConfig({
   }),
   sharp,
   endpoints: [
-    eventsEndpoint,
+    // eventsEndpoint,
     syncPodcastEndpoint,
   ],
   plugins: [
