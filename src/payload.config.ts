@@ -13,6 +13,9 @@ import { Seminars } from './collections/Seminars'
 import { Webinars } from './collections/Webinars'
 import { PodcastEpisodes } from './collections/PodcastEpisodes'
 
+import { eventsEndpoint } from './endpoints/events'
+import { syncPodcastEndpoint } from './endpoints/syncPodcast'
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
@@ -33,6 +36,10 @@ export default buildConfig({
     url: process.env.DATABASE_URI || '',
   }),
   sharp,
+  endpoints: [
+    eventsEndpoint,
+    syncPodcastEndpoint,
+  ],
   plugins: [
     payloadCloudPlugin(),
     // storage-adapter-placeholder
